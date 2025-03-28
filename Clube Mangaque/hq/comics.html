@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clube Mangaquê</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #181818;
+            color: #fff;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .hq {
+            background: #202020;
+            border-radius: 10px;
+            padding: 15px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .poster {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            display: block;
+        }
+
+        .poster:hover {
+            transform: scale(1.05);
+        }
+
+        .review {
+            margin-top: 10px;
+        }
+
+        .rating span {
+            font-size: 24px;
+            cursor: pointer;
+            color: gray;
+        }
+
+        .rating span:hover,
+        .rating span.selected {
+            color: red;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            resize: none;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: red;
+        }
+
+        .submitted-review {
+            margin-top: 10px;
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="menu-image">
+                    <img src="./images/mangaque.png" alt="logo">
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="mangas.html">Mangás</a></li>
+                    <li><a href="comics.html">Comics</a></li>
+                </ul>
+                <input type="text" class="search-box" placeholder="Buscar...">
+            </div>
+        </nav>
+    </header>
+    <h2><span>COMICS</span>
+    <div class="container">
+        <div class="hq" data-index="0">
+            <img src="./images/crise.png" alt="Crise Nas Infinitas Terras" class="poster">
+
+            <div class="review">
+                <div class="rating" onclick="rate(0, event)">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <textarea placeholder="" class="review-text"></textarea>
+                <button onclick="submitReview(0)">Enviar</button>
+                <div class="submitted-review" id="review-0"></div>
+            </div>
+        </div>
+        <div class="hq" data-index="1">
+            <img src="./images/superaranha.png" alt="Superman e Homem Aranha" class="poster">
+            <div class="review">
+                <div class="rating" onclick="rate(1, event)">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <textarea placeholder="" class="review-text"></textarea>
+                <button onclick="submitReview(1)">Enviar</button>
+                <div class="submitted-review" id="review-1"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function rate(index, event) {
+            let stars = event.target.parentNode.children;
+            let selectedIndex = Array.from(stars).indexOf(event.target);
+            Array.from(stars).forEach((star, i) => {
+                star.classList.toggle("selected", i <= selectedIndex);
+            });
+            document.querySelector(`.hq[data-index='${index}']`).setAttribute("data-rating", selectedIndex + 1);
+        }
+        function submitReview(index) {
+            let reviewText = document.querySelector(`.hq[data-index='${index}'] .review-text`).value;
+            let rating = document.querySelector(`.hq[data-index='${index}']`).getAttribute("data-rating") || "0";
+            let reviewContainer = document.getElementById(`review-${index}`);
+            reviewContainer.innerHTML = `<strong>Nota: ${rating} estrelas</strong><p>${reviewText}</p>`;
+        }
+    </script>
+</body>
+
+</html>

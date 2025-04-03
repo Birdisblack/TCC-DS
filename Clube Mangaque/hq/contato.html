@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clube Mangaquê</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleContato.css">
 </head>
 <body>
     <header>
@@ -26,3 +26,32 @@
             </div>
         </nav>
     </header>
+    <main>
+        <!--
+        Fiz um formulário de contato sem necessitar de um BD por trás, visto que será utilizado apenas para teste
+        Utilizei o FormSubmit para melhor praticidade
+        -->
+        <div >
+            <h1>Formulário de Contato</h1>
+            <form action="https://formsubmit.co/sitemangaque@gmail.com" method="POST" class="form">
+
+                <label for="name">Nome</label>
+                <input type="text" name="name" id="name" placeholder="Nome" required />
+
+                <label for="email">Email</label>
+                <Input type="email" name="email" id="email" placeholder="Email" required/>
+                
+                <label for="message">Mensagem</label>
+                <textarea name="message" id="message" placeholder="Escreva sua mensagem"></textarea>
+                <!-- necessário melhorar a estilização do arquivo obrigado.html para padronização da logo e dos menus, o css está linkado no arquivo styleContato.css --->
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/TCC-DS/Clube%20Mangaque/hq/obrigado.html">
+                <button type="submit">Enviar</button> 
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p> 2024 Clube Mangaquê. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

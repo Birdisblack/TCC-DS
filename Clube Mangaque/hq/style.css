@@ -18,7 +18,7 @@ body {
 
 .header-image {
     width: 100%; 
-    height: auto; /*vamos tentar deixar um valor fixo aqui, achei que ela está muito grande*/
+    height: auto; /*vamos tentar deixar um valor fixo aqui, achei que ela está muito grande. Ass: Bianca*/
     display: block;
 }
 img {
@@ -52,7 +52,7 @@ height: 100vh;
 }
 
 h2 {
-font-size: 45px;
+font-size: 45px;/*Diminui um pouco o tamanho pois estava sobrepondo o texto. Ass: Bianca*/
 line-height: 10px;
 font-family: helvetica;
 
@@ -142,6 +142,16 @@ footer{
    
 }
 
+.card-login h3 {
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+   
+}
+
+
 .textfield {
     margin-bottom: 20px;
 }
@@ -185,5 +195,26 @@ footer{
 }
 
 .btn-login:hover {
+    background-color: darkred;
+}
+
+.btn-cadastro{
+    text-align: center;
+    background-color: red;
+    color: white;
+    padding: 15px 30px;
+    border: 1px solid #444;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    box-sizing: border-box;
+}
+
+.btn-cadastro:hover {
     background-color: darkred;
 }

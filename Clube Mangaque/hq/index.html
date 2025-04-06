@@ -27,17 +27,32 @@
 
     <main>
         <aside>
-            <h2><span>BEM VINDO</span>
-            </h2>
+            <h2><span>BEM VINDO</span></h2>
             <h2>AO CLUBE MANGAQUÊ!</h2>
             <p>Explore e descubra os melhores mangás e Hq's do nosso acervo!
              Aqui você pode avaliar, comentar e registrar suas leituras para uma boa comunicação e ajuda na comunidade.
             </p>
         </aside>
+        <div class="login-container">
+            <div class="card-login">
+                <h1>Cadastra-se e venha para o clube</h1>
+                <div class="textfield">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" name="usuario" placeholder="Usuário">
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" placeholder="Senha">
+                </div>
+                <button class="btn-login">Login</button>
+            </div>
+        </div>
     </main>
-
     <footer>
-        <p> 2024 Clube Mangaquê. Todos os direitos reservados.</p>
+        <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
     </footer>
+    <script>
+        document.getElementById("ano").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

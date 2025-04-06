@@ -51,7 +51,10 @@
     </main>
 
     <footer>
-        <p> 2024 Clube Mangaquê. Todos os direitos reservados.</p>
+        <p> &copy; <span id="ano"></span> Clube Mangaquê. Todos os direitos reservados.</p>
     </footer>
+    <script>
+        document.getElementById("ano").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

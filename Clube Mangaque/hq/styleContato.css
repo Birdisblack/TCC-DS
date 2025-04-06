@@ -56,7 +56,8 @@ nav {
 main {
 display: flex;
 flex-direction: row;
-margin-top: 50px;
+margin-top: 10px;
+margin-bottom: 50px;
 }
 
 h1{
@@ -80,13 +81,11 @@ span{
 }
 
 
-
 p{
     line-height: 20px;
     max-width: 500px;
     font-family: helvetica;
 }
-
 
 
 .menu-image {

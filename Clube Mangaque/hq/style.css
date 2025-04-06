@@ -18,7 +18,7 @@ body {
 
 .header-image {
     width: 100%; 
-    height: auto; 
+    height: auto; /*vamos tentar deixar um valor fixo aqui, achei que ela está muito grande*/
     display: block;
 }
 img {
@@ -46,10 +46,13 @@ main {
 display: flex;
 flex-direction: row;
 margin-top: 50px;
+justify-content: space-around;
+padding: 20px;
+height: 100vh;
 }
 
 h2 {
-font-size: 56px;
+font-size: 45px;
 line-height: 10px;
 font-family: helvetica;
 
@@ -67,7 +70,6 @@ p{
     max-width: 500px;
     font-family: helvetica;
 }
-
 
 
 .menu-image {
@@ -111,4 +113,77 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center; 
+}
+
+.login-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 100vh;
+    padding-right: 50px;
+    width: 50%;
+}
+
+.card-login {
+    background: #222;
+    padding: 44px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 350px;
+}
+
+.card-login h1 {
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+   
+}
+
+.textfield {
+    margin-bottom: 20px;
+}
+
+.textfield label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.textfield input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.textfield input:focus {
+    outline: none;
+    border-color: red;
+}
+
+.btn-login {
+    text-align: center;
+    background-color: red;
+    color: white;
+    padding: 15px 30px;
+    border: 1px solid #444;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    box-sizing: border-box;
+}
+
+.btn-login:hover {
+    background-color: darkred;
 }
